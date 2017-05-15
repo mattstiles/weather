@@ -19,7 +19,8 @@ def parse_station(station):
 
     with open('{}.csv'.format(station), 'w') as out_file:
         out_file.write('date,actual_min_temp,actual_max_temp,'
-                            'average_min_temp,average_max_temp\n')
+                            'average_min_temp,average_max_temp,'
+                            'record_min_temp,record_max_temp\n')
 
         while current_date != end_date:
             try_again = False
@@ -35,12 +36,15 @@ def parse_station(station):
                 try:
                     actual_max_temp = weather_data[1].text
                     average_max_temp = weather_data[2].text
+                    record_max_temp = weather_data[3].text
                     actual_min_temp = weather_data[4].text
                     average_min_temp = weather_data[5].text
+                    record_min_temp = weather_data[6].text
 
                     out_file.write('{}-{}-{},'.format(current_date.year, current_date.month, current_date.day))
                     out_file.write(','.join([actual_min_temp, actual_max_temp,
-                                            average_min_temp, average_max_temp]))
+                                            average_min_temp, average_max_temp,
+                                            record_min_temp, record_max_temp]))
                     out_file.write('\n')
                     current_date += timedelta(days=1)
                 except:
