@@ -8,8 +8,8 @@ import os
 def scrape_station(station):
 
     # You can change the dates here if you prefer to scrape a different range
-    current_date = datetime(year=2016, month=10, day=01)
-    end_date = datetime(year=2016, month=10, day=31)
+    current_date = datetime(year=2017, month=01, day=01)
+    end_date = datetime(year=2017, month=05, day=15)
 
     # Make sure a directory exists for the station web pages
     os.mkdir(station)
@@ -42,5 +42,5 @@ def scrape_station(station):
 
 # Scrape the stations (Seoul = RKSS)
 # Scrape the stations (Shanghai = ZSSS)
-for station in ['RKSS']:
+for station in ['ZBAA']:
     scrape_station(station)

@@ -12,10 +12,10 @@ def parse_station(station):
     pages downloaded.
     '''
 
-    # Scrape between Oct 1, 2016 and Oct 31, 2016
+    # Scrape between Jan. 1, 2017 and May 15, 2017
     # You can change the dates here if you prefer to parse a different range
-    current_date = datetime(year=2016, month=10, day=01)
-    end_date = datetime(year=2016, month=10, day=31)
+    current_date = datetime(year=2017, month=01, day=01)
+    end_date = datetime(year=2017, month=05, day=15)
 
     with open('{}.csv'.format(station), 'w') as out_file:
         out_file.write('date,actual_min_temp,actual_max_temp,'
@@ -75,5 +75,5 @@ def parse_station(station):
 
 
 # Parse the stations
-for station in ['RKSS']:
+for station in ['ZBAA']:
     parse_station(station)
